@@ -17,6 +17,7 @@
                     fontFamily: { sans: ['"Inter"', 'sans-serif'], },
                     colors: {
                         brand: { 500: '#38bdf8', 600: '#818cf8', 900: '#020617' },
+                        apple: { bg: '#fbfbfd', text: '#1d1d1f' }
                     }
                 }
             }
@@ -25,12 +26,12 @@
 
     <style>
         body { 
-            background-color: #020617; 
+            background-color: #020617; /* Dark top half */
             color: #f8fafc; 
             overflow-x: hidden;
         }
         
-        /* Ambient Glow Effect */
+        /* Ambient Glow Effect for Hero */
         .ambient-glow {
             position: absolute;
             top: -10%;
@@ -44,10 +45,13 @@
             pointer-events: none;
         }
 
-        /* Tech Grid Overlay */
+        /* Tech Grid Overlay for Hero */
         .tech-grid {
-            position: fixed;
-            inset: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), 
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
@@ -56,25 +60,31 @@
             pointer-events: none;
         }
         
-        /* Ultra-Premium Glass Cards */
-        .glass-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 16px;
+        /* Dark Glass Nav */
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Light Mode Premium Cards (Apple Style) */
+        .light-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 24px;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .glass-card:hover {
-            border-color: rgba(129, 140, 248, 0.3);
+        .light-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(129, 140, 248, 0.1);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
         }
 
-        /* Watermarked Background Numbers for Cards */
+        /* Watermarked Background Numbers for Light Cards */
         .card-watermark {
             position: absolute;
             top: -20px;
@@ -82,29 +92,22 @@
             font-size: 140px;
             font-weight: 800;
             line-height: 1;
-            color: rgba(255, 255, 255, 0.02);
+            color: rgba(0, 0, 0, 0.02);
             z-index: 0;
             pointer-events: none;
             transition: color 0.4s ease;
         }
 
-        .glass-card:hover .card-watermark {
-            color: rgba(129, 140, 248, 0.05);
+        .light-card:hover .card-watermark {
+            color: rgba(0, 0, 0, 0.04);
         }
 
-        /* Content inside card needs to sit above the watermark */
         .card-content {
             position: relative;
             z-index: 1;
         }
 
-        .glass-nav {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
+        /* Text Gradients */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
@@ -136,128 +139,11 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 md:pt-56 max-w-7xl mx-auto px-6 relative">
+    <!-- DARK HERO SECTION -->
+    <section class="pt-48 pb-32 md:pt-56 max-w-7xl mx-auto px-6 relative">
         
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.05] max-w-5xl mb-10">
             Directing Enterprise AI product vision and mission-critical cloud strategy at <span class="text-gradient-brand">massive scale.</span>
         </h1>
         
-        <p class="text-xl text-slate-400 max-w-3xl font-light leading-relaxed mb-24">
-            Bridging the gap between executive product roadmaps and complex autonomous infrastructure. Specializing in the governance, deployment, and optimization of AI across highly regulated Fortune 50 ecosystems to ensure zero-downtime reliability.
-        </p>
-
-        <!-- 4-Pillar Executive Summary -->
-        <div class="grid md:grid-cols-4 gap-8 border-t border-white/10 pt-16">
-            <div>
-                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300 mb-4 flex items-center"><span class="w-4 h-[1px] bg-brand-500 mr-3"></span> Product Strategy</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Pioneering roadmaps focused on keeping cloud platforms highly available, relentlessly affordable, and continuously audit-ready.</p>
-            </div>
-            <div>
-                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300 mb-4 flex items-center"><span class="w-4 h-[1px] bg-brand-500 mr-3"></span> Architecture</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Architecting autonomous, self-healing infrastructures and optimizing complex multi-cloud ecosystems at Fortune 50 scale.</p>
-            </div>
-            <div>
-                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300 mb-4 flex items-center"><span class="w-4 h-[1px] bg-brand-500 mr-3"></span> Thought Leadership</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Evaluating cutting-edge global research to maintain the structural integrity and security of the broader computer science discipline.</p>
-            </div>
-            <div>
-                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300 mb-4 flex items-center"><span class="w-4 h-[1px] bg-brand-500 mr-3"></span> Industry Advisory</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Selected by premier engineering institutions, venture capital firms, and AI safety institutes to assess venture potential.</p>
-            </div>
-        </div>
-        
-    </section>
-
-    <!-- Deep Dive: Visionary Strategic Initiatives -->
-    <section id="strategy" class="py-32 relative border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-sm font-bold uppercase tracking-[0.2em] mb-16 text-slate-400 text-center">Strategic Product Initiatives</h2>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Pillar 1 -->
-                <div class="glass-card p-10">
-                    <div class="card-watermark">01</div>
-                    <div class="card-content">
-                        <h3 class="text-2xl font-bold mb-6 text-white tracking-tight">Autonomous Infrastructure Resilience</h3>
-                        <ul class="text-sm text-slate-400 space-y-4 font-light leading-relaxed">
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Architecting AI-enhanced managed cloud ecosystems designed to keep mission-critical operations highly available.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Driving deep learning framework integration for predictive Log Anomaly Analysis.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Shifting operations from reactive monitoring to autonomous, self-healing incident response ecosystems.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Pillar 2 -->
-                <div class="glass-card p-10">
-                    <div class="card-watermark">02</div>
-                    <div class="card-content">
-                        <h3 class="text-2xl font-bold mb-6 text-white tracking-tight">Zero-Trust AI Governance</h3>
-                        <ul class="text-sm text-slate-400 space-y-4 font-light leading-relaxed">
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Enforcing continuous cloud compliance across highly regulated and mission-critical enterprise environments.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Designing target architectures strictly aligned with NIST 800-53 frameworks and federal certification mandates.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Establishing rigorous AI agent containment protocols and autonomous response limits to guarantee enterprise safety.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Pillar 3 -->
-                <div class="glass-card p-10">
-                    <div class="card-watermark">03</div>
-                    <div class="card-content">
-                        <h3 class="text-2xl font-bold mb-6 text-white tracking-tight">Algorithmic Platform Economics</h3>
-                        <ul class="text-sm text-slate-400 space-y-4 font-light leading-relaxed">
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Embedding structural FinOps practices directly into product roadmaps to ensure massive-scale platform affordability.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Leveraging Cloud Data Lakehouse architectures to centralize operational telemetry and financial visibility.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Driving predictive analytics and enterprise resource optimization without compromising compute performance.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Pillar 4 -->
-                <div class="glass-card p-10">
-                    <div class="card-watermark">04</div>
-                    <div class="card-content">
-                        <h3 class="text-2xl font-bold mb-6 text-white tracking-tight">AI-Accelerated Engineering</h3>
-                        <ul class="text-sm text-slate-400 space-y-4 font-light leading-relaxed">
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Defining the strategic product vision for accelerating software delivery across complex enterprise engineering teams.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Evaluating and integrating frontier AI developer tools deeply into the software delivery lifecycle.</li>
-                            <li class="flex items-start"><span class="text-brand-500 mr-3 mt-0.5">✦</span> Modernizing traditional deployment pipelines into AI-assisted, high-velocity engineering ecosystems.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EB1-A Pillars: Leadership & Advisory -->
-    <section id="leadership" class="py-32 border-t border-white/5 bg-gradient-to-b from-transparent to-white/[0.02]">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
-            
-            <div class="text-left">
-                <h2 class="text-sm font-bold uppercase tracking-[0.2em] mb-6 text-brand-500">Authorship & Review</h2>
-                <h3 class="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">Thought Leadership</h3>
-                <p class="text-slate-400 text-lg font-light leading-relaxed">
-                    Evaluating cutting-edge global research to maintain the structural integrity and security of the broader computer science discipline. Serving as a guardian for enterprise standards across international journals.
-                </p>
-            </div>
-
-            <div id="advisory" class="text-left">
-                <h2 class="text-sm font-bold uppercase tracking-[0.2em] mb-6 text-brand-500">Industry Impact</h2>
-                <h3 class="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">Technical Advisory</h3>
-                <p class="text-slate-400 text-lg font-light leading-relaxed">
-                    Selected by premier engineering institutions, global venture capital firms, and specialized AI safety institutes to assess architectural viability, scalability, and funding potential for emerging technologies.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Minimalist Footer -->
-    <footer class="py-12 border-t border-white/5 bg-black">
-        <div class="max-w-7xl mx-auto px-6 flex justify-center">
-            <a href="mailto:contact@lakshmimamidala.com" class="text-xs font-bold text-slate-500 hover:text-brand-500 transition-colors tracking-[0.2em] uppercase">Contact</a>
-        </div>
-    </footer>
-
-</body>
-</html>
+        <p class="text-xl text-slate-400 max
