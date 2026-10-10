@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmi Mamidala | Independent Architect & Strategist</title>
+    <meta name="description" content="Lakshmi Mamidala is a Technical Architect & Product Strategist specializing in Enterprise Cloud Reliability, FinOps, Secure AI Governance, and Audit-Ready Platform Architecture.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #64ffda;
+            --text-main: #ccd6f6;
+            --text-muted: #8892b0;
+            --bg-dark: #020c1b;
+            --bg-card: #112240;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; background-color: var(--primary); color: var(--text-main); }
+        
+        body { line-height: 1.6; }
+        a { color: var(--secondary); text-decoration: none; transition: 0.3s; }
+        a:hover { text-decoration: underline; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; padding: 2rem 10%; background: rgba(10, 25, 47, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 1.2rem; font-weight: 700; color: var(--secondary); letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text-main); font-weight: 600; }
+        .nav-links a:hover { color: var(--secondary); text-decoration: none; }
+
+        /* Sections */
+        section { padding: 100px 10%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        
+        /* Hero */
+        .hero h1 { font-size: 4rem; color: #e6f1ff; margin-bottom: 1rem; line-height: 1.1; }
+        .hero h2 { font-size: 2.5rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        .hero p { max-width: 600px; font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .btn { padding: 1rem 2rem; border: 1px solid var(--secondary); border-radius: 4px; color: var(--secondary); font-weight: 600; background: transparent; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: rgba(100, 255, 218, 0.1); text-decoration: none; }
+
+        /* Pillars & Grid */
+        .section-title { font-size: 2rem; color: #e6f1ff; margin-bottom: 3rem; display: flex; align-items: center; }
+        .section-title::after { content: ""; flex: 1; height: 1px; background: #233554; margin-left: 20px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: var(--bg-card); padding: 2rem; border-radius: 8px; transition: transform 0.3s; border: 1px solid transparent; }
+        .card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        .card h3 { color: #e6f1ff; margin-bottom: 1rem; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Footer */
+        footer { padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; background: var(--bg-dark); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.8rem; }
+            .nav-links { display: none; } 
+        }
+    </style>
+
+    <!-- Structured Data for SEO / Knowledge Panel -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lakshmi Mamidala",
+      "jobTitle": "Independent Architect & Strategist",
+      "description": "Technical Architect & Product Strategist specializing in Enterprise Cloud Reliability, FinOps, Secure AI Governance, and Audit-Ready Platform Architecture.",
+      "url": "https://lakshmimamidala.github.io",
+      "sameAs": [
+        "https://www.linkedin.com/in/YOUR-LINKEDIN",
+        "https://github.com/lakshmimamidala"
+      ],
+      "knowsAbout": ["Enterprise Cloud Reliability", "FinOps", "Secure AI Governance", "Platform Architecture", "AIOps", "NIST 800-53"]
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">LM.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#pillars">Core Pillars</a>
+            <a href="#leadership">Industry Leadership</a>
+            <a href="https://github.com/lakshmimamidala" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </nav>
+
+    <section id="about" class="hero">
+        <p>Hi, my name is</p>
+        <h1>Lakshmi Mamidala.</h1>
+        <h2>I architect audit-ready cloud platforms.</h2>
+        <p>I am an Independent Technical Architect and Product Strategist specializing in Enterprise Cloud Reliability, FinOps, and Secure AI Governance. I bridge the gap between autonomous operations and stringent compliance mandates to build scalable, resilient infrastructure.</p>
+        <a href="mailto:your-email@example.com" class="btn" style="width: max-content;">Get in Touch</a>
+    </section>
+
+    <section id="pillars">
+        <h2 class="section-title">Core Architectural Pillars</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Platform Reliability & Autonomous Ops</h3>
+                <p>Designing self-healing infrastructures and leveraging AIOps for autonomous incident response. Focused on minimizing downtime and accelerating recovery in mission-critical enterprise environments.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Economics & FinOps</h3>
+                <p>Implementing algorithmic cost governance and optimization strategies. Ensuring cloud infrastructure scales efficiently without compromising performance, aligning technical deployments with strategic financial objectives.</p>
+            </div>
+            <div class="card">
+                <h3>Continuous Compliance & AI Governance</h3>
+                <p>Architecting environments that inherently meet NIST 800-53 and CMMC frameworks. Pioneering AI agent containment frameworks to ensure safe, auditable, and secure AI deployments at scale.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2 class="section-title">Industry Leadership & Contributions</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Peer Reviewer & Academic Contributor</h3>
+                <p>Active peer reviewer for the IEEE, Journal of Computer Science, and OpenReview, evaluating cutting-edge research in computer science, network optimization, and secure systems architecture.</p>
+            </div>
+            <div class="card">
+                <h3>Technical Judge & Evaluator</h3>
+                <p>Expert technical judge for the Apart Research AI Incident Response Sprint and AntlerVC hackathons, assessing the viability, security, and scalability of emerging AI solutions and startup infrastructures.</p>
+            </div>
+            <div class="card">
+                <h3>Speaker & Mentor</h3>
+                <p>Dedicated to advancing the technical community through mentorship and speaking engagements, focusing on the intersection of cloud architecture, security, and the future of AI governance.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Lakshmi Mamidala &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
