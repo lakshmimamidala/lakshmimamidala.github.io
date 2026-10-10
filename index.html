@@ -44,14 +44,23 @@
         .btn:hover { background: rgba(100, 255, 218, 0.1); text-decoration: none; }
 
         /* Pillars & Grid */
-        .section-title { font-size: 2rem; color: #e6f1ff; margin-bottom: 3rem; display: flex; align-items: center; }
-        .section-title::after { content: ""; flex: 1; height: 1px; background: #233554; margin-left: 20px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: var(--bg-card); padding: 2rem; border-radius: 8px; transition: transform 0.3s; border: 1px solid transparent; }
-        .card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .card h3 { color: #e6f1ff; margin-bottom: 1rem; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
+        <section id="pillars">
+        <h2 class="section-title">Core Architectural & Strategic Pillars</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Cloud Reliability & AIOps Strategy</h3>
+                <p>Pioneering self-healing infrastructures and driving the product vision for advanced AIOps. Focused on achieving autonomous, zero-downtime operations for mission-critical, enterprise-scale platforms.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Economics & FinOps Vision</h3>
+                <p>Designing algorithmic cost governance and strategic FinOps models. Aligning complex cloud architectures with overarching product strategy to optimize resource efficiency without compromising performance.</p>
+            </div>
+            <div class="card">
+                <h3>Secure AI Governance & Compliance</h3>
+                <p>Architecting audit-ready environments tailored to rigorous defense and federal standards (NIST, CMMC). Developing forward-looking AI agent containment frameworks for secure, scalable enterprise AI adoption.</p>
+            </div>
+        </div>
+    </section>
 
         /* Footer */
         footer { padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; background: var(--bg-dark); }
