@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,145 +9,259 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Ultra-stable Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
+        /* Base Reset & Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             background-color: #050505; 
             color: #ffffff; 
-            overflow-x: hidden;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
         }
+        a { text-decoration: none; color: inherit; }
         
-        /* Aurora Background - Fixed stacking */
+        /* Layout Utilities */
+        .container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-12 { gap: 3rem; }
+        
+        /* Aurora Background */
         .aurora-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-            background: #050505;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0; pointer-events: none; overflow: hidden; background: #050505;
         }
+        .orb { position: absolute; filter: blur(80px); border-radius: 50%; }
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 60%); }
+        .orb-2 { top: 20%; right: -20%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(129, 140, 248, 0.10) 0%, transparent 60%); }
+        .orb-3 { bottom: -20%; left: 20%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(232, 121, 249, 0.08) 0%, transparent 60%); }
 
-        .orb-1 {
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
-            filter: blur(80px);
-        }
+        .content-layer { position: relative; z-index: 10; }
 
-        .orb-2 {
-            position: absolute;
-            top: 20%;
-            right: -20%;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(129, 140, 248, 0.10) 0%, transparent 60%);
-            filter: blur(80px);
+        /* Navigation */
+        .nav-wrapper { position: fixed; top: 1.5rem; width: 100%; z-index: 50; display: flex; justify-content: center; padding: 0 1.5rem; }
+        .nav-pill {
+            background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 9999px;
+            padding: 1rem 2rem; display: flex; align-items: center; gap: 3rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
+        .nav-brand { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; color: #ffffff; }
+        .nav-divider { width: 1px; height: 1rem; background: rgba(255, 255, 255, 0.2); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-link { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; color: #a1a1aa; text-transform: uppercase; transition: color 0.3s; }
+        .nav-link:hover { color: #ffffff; }
 
-        .orb-3 {
-            position: absolute;
-            bottom: -20%;
-            left: 20%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(232, 121, 249, 0.08) 0%, transparent 60%);
-            filter: blur(80px);
+        /* Hero Section */
+        .hero { padding: 16rem 1.5rem 8rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .hero-max { max-width: 64rem; }
+        .hero-subtitle {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.3em; color: #a1a1aa; text-transform: uppercase;
+            margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem;
         }
-
-        /* Essential for keeping text above the background */
-        .content-layer {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Apple-style Bento Cards */
-        .bento-card {
-            background: rgba(24, 24, 27, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 3rem;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        .hero-line { width: 2rem; height: 1px; background: #52525b; }
+        .hero-title { font-size: 4.5rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 3rem; color: #ffffff; }
+        .hero-desc { font-size: 1.25rem; font-weight: 300; color: #d4d4d8; max-width: 48rem; margin: 0 auto; line-height: 1.7; }
         
-        .bento-card:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
-        }
-
-        .text-gradient-hero {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .text-gradient {
+            background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-image: linear-gradient(to right, #38bdf8, #818cf8, #e879f9);
         }
 
+        /* Bento Grid */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 6rem auto; }
+        .bento-card {
+            background: rgba(24, 24, 27, 0.5); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1.5rem;
+            padding: 3rem; transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .bento-card:hover {
+            background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
+        }
         .icon-box {
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 3.5rem; height: 3.5rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center;
+            margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        .impact-section {
-            background: linear-gradient(to bottom, transparent, #080f1c 20%, #060b14 100%);
-        }
+        .icon-box svg { width: 1.5rem; height: 1.5rem; }
         
-        .impact-grid {
-            position: absolute;
-            inset: 0;
+        .c-cyan { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.2); color: #22d3ee; }
+        .c-violet { background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+        .c-emerald { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .c-rose { background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.2); color: #fb7185; }
+
+        .card-title { font-size: 1.875rem; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 1rem; }
+        .card-desc { color: #a1a1aa; font-size: 1.125rem; font-weight: 300; line-height: 1.6; margin-top: 1.5rem; }
+
+        /* Impact Section */
+        .impact-wrap { position: relative; margin-top: 3rem; }
+        .impact-bg {
+            background: linear-gradient(to bottom, transparent, #080f1c 20%, #060b14 100%);
+            padding: 8rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative;
+        }
+        .impact-grid-pattern {
+            position: absolute; inset: 0;
             background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            z-index: 0;
-            opacity: 0.5;
+            background-size: 60px 60px; z-index: 0; opacity: 0.5;
+        }
+        .impact-card {
+            background: rgba(0, 0, 0, 0.4); padding: 3.5rem; border-radius: 2rem;
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .impact-subtitle { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; }
+        .impact-line { width: 1.5rem; height: 1px; margin-right: 0.75rem; }
+        .impact-title { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 1.5rem; }
+        .impact-desc { color: #d4d4d8; font-size: 1.125rem; font-weight: 300; line-height: 1.6; }
+
+        /* Footer */
+        .footer { padding: 3rem 0; background: #060b14; border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 10; text-align: center; }
+        .footer a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.3s; }
+        .footer a:hover { color: #22d3ee; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-divider, .nav-links { display: none; }
+            .hero-title { font-size: 3rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero { padding: 10rem 1.5rem 4rem; }
+            .impact-card { padding: 2rem; }
         }
     </style>
 </head>
-<body class="selection:bg-cyan-500/30 selection:text-white">
+<body>
 
-    <!-- Background Layer -->
     <div class="aurora-bg">
-        <div class="orb-1"></div>
-        <div class="orb-2"></div>
-        <div class="orb-3"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
-    <!-- Content Layer -->
     <div class="content-layer">
 
-        <!-- Floating Navigation -->
-        <div class="fixed w-full z-50 top-6 px-6 flex justify-center">
-            <nav class="bg-zinc-900/60 backdrop-blur-xl border border-white/10 rounded-full px-8 py-4 flex items-center gap-12 shadow-2xl">
-                <div class="text-sm font-semibold tracking-wide text-white">Lakshmi Mamidala</div>
-                <div class="w-px h-4 bg-white/20 hidden md:block"></div>
-                <div class="hidden md:flex space-x-8 text-xs font-medium tracking-widest text-zinc-400 uppercase">
-                    <a href="#strategy" class="hover:text-white transition-colors">Strategy</a>
-                    <a href="#leadership" class="hover:text-white transition-colors">Authorship</a>
-                    <a href="#advisory" class="hover:text-white transition-colors">Advisory</a>
+        <!-- Navigation -->
+        <div class="nav-wrapper">
+            <nav class="nav-pill">
+                <div class="nav-brand">Lakshmi Mamidala</div>
+                <div class="nav-divider"></div>
+                <div class="nav-links">
+                    <a href="#strategy" class="nav-link">Strategy</a>
+                    <a href="#leadership" class="nav-link">Authorship</a>
+                    <a href="#advisory" class="nav-link">Advisory</a>
                 </div>
             </nav>
         </div>
 
-        <!-- Hero Section -->
-        <section class="pt-48 pb-24 md:pt-64 md:pb-32 px-6 flex flex-col items-center text-center">
-            <div class="max-w-5xl">
-                <h2 class="text-xs font-bold tracking-[0.3em] text-zinc-400 uppercase mb-8 flex items-center justify-center gap-4">
-                    <span class="w-8
+        <!-- Hero -->
+        <section class="hero container">
+            <div class="hero-max">
+                <h2 class="hero-subtitle">
+                    <span class="hero-line"></span> Enterprise AI Architect <span class="hero-line"></span>
+                </h2>
+                <h1 class="hero-title">
+                    Directing product vision at <span class="text-gradient">massive scale.</span>
+                </h1>
+                <p class="hero-desc">
+                    Bridging the gap between executive roadmaps and autonomous infrastructure. Specializing in the deployment of AI across Fortune 50 ecosystems to ensure zero-downtime reliability.
+                </p>
+            </div>
+        </section>
+
+        <!-- Strategy Grid -->
+        <section id="strategy" class="container">
+            <div class="grid-2">
+                
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-cyan">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="card-title">Autonomous Resilience</h3>
+                    </div>
+                    <p class="card-desc">
+                        Architecting AI-enhanced managed cloud ecosystems. Driving deep learning integration to shift operations from reactive monitoring to autonomous, self-healing incident response.
+                    </p>
+                </div>
+                
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-violet">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="card-title">Zero-Trust Governance</h3>
+                    </div>
+                    <p class="card-desc">
+                        Enforcing continuous cloud compliance across highly regulated environments. Designing target architectures strictly aligned with NIST 800-53 and rigorous AI agent containment protocols.
+                    </p>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-emerald">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <h3 class="card-title">Platform Economics</h3>
+                    </div>
+                    <p class="card-desc">
+                        Embedding structural FinOps practices directly into product roadmaps. Leveraging Cloud Data Lakehouse architectures to drive predictive analytics and massive-scale resource optimization.
+                    </p>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-rose">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h3 class="card-title">AI-Accelerated Delivery</h3>
+                    </div>
+                    <p class="card-desc">
+                        Defining the strategic vision for accelerating software delivery across complex engineering teams. Modernizing traditional pipelines into AI-assisted, high-velocity enterprise ecosystems.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <div class="impact-wrap">
+            <section class="impact-bg">
+                <div class="impact-grid-pattern"></div>
+                <div class="container grid-2" style="margin: 0 auto; position: relative; z-index: 10;">
+                    
+                    <div id="leadership" class="impact-card">
+                        <h2 class="impact-subtitle" style="color: #22d3ee;"><span class="impact-line" style="background: #22d3ee;"></span> Scholarly Review</h2>
+                        <h3 class="impact-title">Thought Leadership.</h3>
+                        <p class="impact-desc">
+                            Evaluating cutting-edge global research to maintain the structural integrity and security of the broader computer science discipline. Serving as a guardian for enterprise standards across international journals.
+                        </p>
+                    </div>
+
+                    <div id="advisory" class="impact-card">
+                        <h2 class="impact-subtitle" style="color: #a78bfa;"><span class="impact-line" style="background: #a78bfa;"></span> Industry Impact</h2>
+                        <h3 class="impact-title">Technical Advisory.</h3>
+                        <p class="impact-desc">
+                            Selected by premier engineering institutions, global venture capital firms, and specialized AI safety institutes to assess architectural viability, scalability, and funding potential for emerging technologies.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <a href="mailto:contact@lakshmimamidala.com">Get in Touch</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
