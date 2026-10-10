@@ -25,14 +25,6 @@
         /* Layout Utilities */
         .container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
         .text-center { text-align: center; }
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .items-center { align-items: center; }
-        .justify-center { justify-content: center; }
-        .justify-between { justify-content: space-between; }
-        .gap-4 { gap: 1rem; }
-        .gap-6 { gap: 1.5rem; }
-        .gap-12 { gap: 3rem; }
         
         /* Aurora Background */
         .aurora-bg {
@@ -60,7 +52,7 @@
         .nav-link:hover { color: #ffffff; }
 
         /* Hero Section */
-        .hero { padding: 16rem 1.5rem 8rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .hero { padding: 12rem 1.5rem 8rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .hero-max { max-width: 64rem; }
         .hero-title { font-size: 4rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 3rem; color: #ffffff; }
         .hero-desc { font-size: 1.25rem; font-weight: 300; color: #d4d4d8; max-width: 48rem; margin: 0 auto; line-height: 1.7; }
@@ -69,6 +61,16 @@
             background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-image: linear-gradient(to right, #38bdf8, #818cf8, #e879f9);
         }
+
+        /* 4-Pillar Summary Grid */
+        .summary-grid { 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; 
+            margin-top: 5rem; padding-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.1); 
+            text-align: left; 
+        }
+        .sum-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #d4d4d8; margin-bottom: 1rem; display: flex; align-items: center; }
+        .sum-line { width: 1rem; height: 1px; background: #38bdf8; margin-right: 0.75rem; }
+        .sum-desc { font-size: 0.875rem; color: #a1a1aa; line-height: 1.6; }
 
         /* Bento Grid */
         .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 6rem auto; }
@@ -121,9 +123,13 @@
         .footer a:hover { color: #22d3ee; }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
             .nav-divider, .nav-links { display: none; }
             .hero-title { font-size: 2.5rem; }
+            .summary-grid { grid-template-columns: 1fr; }
             .grid-2 { grid-template-columns: 1fr; }
             .hero { padding: 10rem 1.5rem 4rem; }
             .impact-card { padding: 2rem; }
@@ -160,4 +166,120 @@
                     Driving Enterprise AI product vision and mission-critical cloud strategy at <span class="text-gradient">massive scale.</span>
                 </h1>
                 <p class="hero-desc">
-                    Bridging the gap between executive product roadmaps and complex
+                    Bridging the gap between executive product roadmaps and complex autonomous infrastructure. Specializing in the governance, deployment, and optimization of AI across highly regulated Fortune 50 ecosystems to ensure zero-downtime reliability.
+                </p>
+            </div>
+            
+            <!-- Restored Executive Summary -->
+            <div class="summary-grid">
+                <div>
+                    <h3 class="sum-title"><span class="sum-line"></span> Product Strategy</h3>
+                    <p class="sum-desc">Pioneering roadmaps focused on keeping cloud platforms highly available, relentlessly affordable, and continuously audit-ready.</p>
+                </div>
+                <div>
+                    <h3 class="sum-title"><span class="sum-line"></span> Architecture</h3>
+                    <p class="sum-desc">Architecting autonomous, self-healing infrastructures and optimizing complex multi-cloud ecosystems at Fortune 50 scale.</p>
+                </div>
+                <div>
+                    <h3 class="sum-title"><span class="sum-line"></span> Thought Leadership</h3>
+                    <p class="sum-desc">Evaluating cutting-edge global research to maintain the structural integrity and security of the broader computer science discipline.</p>
+                </div>
+                <div>
+                    <h3 class="sum-title"><span class="sum-line"></span> Industry Advisory</h3>
+                    <p class="sum-desc">Selected by premier engineering institutions, venture capital firms, and AI safety institutes to assess venture potential.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Grid -->
+        <section id="strategy" class="container">
+            <div class="grid-2">
+                
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-cyan">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="card-title">Autonomous Resilience</h3>
+                    </div>
+                    <p class="card-desc">
+                        Architecting AI-enhanced managed cloud ecosystems. Driving deep learning integration to shift operations from reactive monitoring to autonomous, self-healing incident response.
+                    </p>
+                </div>
+                
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-violet">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="card-title">Zero-Trust Governance</h3>
+                    </div>
+                    <p class="card-desc">
+                        Enforcing continuous cloud compliance across highly regulated environments. Designing target architectures strictly aligned with NIST 800-53 and rigorous AI agent containment protocols.
+                    </p>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-emerald">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <h3 class="card-title">Platform Economics</h3>
+                    </div>
+                    <p class="card-desc">
+                        Embedding structural FinOps practices directly into product roadmaps. Leveraging Cloud Data Lakehouse architectures to drive predictive analytics and massive-scale resource optimization.
+                    </p>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="icon-box c-rose">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h3 class="card-title">AI-Accelerated Delivery</h3>
+                    </div>
+                    <p class="card-desc">
+                        Defining the strategic vision for accelerating software delivery across complex engineering teams. Modernizing traditional pipelines into AI-assisted, high-velocity enterprise ecosystems.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <div class="impact-wrap">
+            <section class="impact-bg">
+                <div class="impact-grid-pattern"></div>
+                <div class="container grid-2" style="margin: 0 auto; position: relative; z-index: 10;">
+                    
+                    <div id="leadership" class="impact-card">
+                        <h2 class="impact-subtitle" style="color: #22d3ee;"><span class="impact-line" style="background: #22d3ee;"></span> Scholarly Review</h2>
+                        <h3 class="impact-title">Thought Leadership.</h3>
+                        <p class="impact-desc">
+                            Evaluating cutting-edge global research to maintain the structural integrity and security of the broader computer science discipline. Serving as a guardian for enterprise standards across international journals.
+                        </p>
+                    </div>
+
+                    <div id="advisory" class="impact-card">
+                        <h2 class="impact-subtitle" style="color: #a78bfa;"><span class="impact-line" style="background: #a78bfa;"></span> Industry Impact</h2>
+                        <h3 class="impact-title">Technical Advisory.</h3>
+                        <p class="impact-desc">
+                            Selected by premier engineering institutions, global venture capital firms, and specialized AI safety institutes to assess architectural viability, scalability, and funding potential for emerging technologies.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <a href="mailto:contact@lakshmimamidala.com">Get in Touch</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
