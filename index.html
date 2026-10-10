@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lakshmi Mamidala</title>
+    <title>Lakshmi Mamidala | Architect & Strategist</title>
     
-    <!-- Premium Editorial Fonts -->
+    <!-- Premium Enterprise Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +19,8 @@
                 extend: {
                     fontFamily: { sans: ['"Inter"', 'sans-serif'], },
                     colors: {
-                        executive: { 900: '#111111', 600: '#555555', 300: '#e5e5e5', 50: '#fafafa' }
+                        slate: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 800: '#1e293b', 900: '#0f172a' },
+                        accent: '#0f172a'
                     }
                 }
             }
@@ -27,107 +28,149 @@
     </script>
 
     <style>
-        body { background-color: #fafafa; color: #111111; }
-        .section-divider { border-top: 1px solid #e5e5e5; }
-        a { transition: opacity 0.3s ease; }
-        a:hover { opacity: 0.6; }
+        body { 
+            background-color: #f8fafc; 
+            color: #0f172a; 
+            /* Subtle architectural grid background */
+            background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center top;
+        }
+        .content-wrapper { background-color: rgba(248, 250, 252, 0.95); }
+        .grid-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease-in-out;
+        }
+        .grid-card:hover {
+            border-color: #94a3b8;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
     </style>
-
-    <!-- Schema.org for Search Engines & Verification -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Lakshmi Mamidala",
-      "jobTitle": "Technical Architect",
-      "url": "https://lakshmimamidala.github.io",
-      "sameAs": [
-        "https://github.com/lakshmimamidala"
-      ],
-      "knowsAbout": ["Cloud Reliability", "FinOps", "AI Governance", "Platform Architecture", "AIOps", "NIST 800-53", "CMMC"]
-    }
-    </script>
 </head>
-<body class="antialiased selection:bg-black selection:text-white">
+<body class="antialiased selection:bg-slate-900 selection:text-white">
 
-    <!-- Minimal Navigation -->
-    <nav class="w-full bg-transparent pt-12 pb-6">
-        <div class="max-w-5xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <!-- Replaced "LM" with your full name in a refined, understated font -->
-            <a href="#" class="text-base font-medium tracking-wide text-executive-900">Lakshmi Mamidala</a>
+    <!-- Enterprise Navigation Bar -->
+    <nav class="fixed w-full z-50 top-0 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-3 h-3 bg-slate-900 rounded-sm"></div>
+                <a href="#" class="text-lg font-bold tracking-tight text-slate-900 uppercase">Lakshmi Mamidala</a>
+            </div>
             
-            <div class="flex space-x-8 text-sm font-medium text-executive-600">
-                <a href="#focus" class="hover:text-black">Focus Areas</a>
-                <a href="#authorship" class="hover:text-black">Authorship</a>
-                <a href="https://github.com/lakshmimamidala" target="_blank" class="hover:text-black">GitHub</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#scale" class="hover:text-slate-900 transition-colors">Executive Scope</a>
+                <a href="#contributions" class="hover:text-slate-900 transition-colors">Original Contributions</a>
+                <a href="#evaluation" class="hover:text-slate-900 transition-colors">Industry Evaluation</a>
+                <a href="https://github.com/lakshmimamidala" target="_blank" class="px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition-colors">View GitHub</a>
             </div>
         </div>
     </nav>
 
-    <!-- Understated Hero Section -->
-    <section class="py-24 md:py-32">
-        <div class="max-w-5xl mx-auto px-8">
-            <!-- Removed the small kicker title entirely. Just a massive, authoritative statement. -->
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-executive-900 leading-tight max-w-4xl">
+    <!-- Hero Section (The Fortune 50 Statement) -->
+    <section class="pt-32 pb-16 md:pt-48 md:pb-24 content-wrapper border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="inline-block px-3 py-1 mb-6 border border-slate-300 rounded-full text-xs font-bold uppercase tracking-widest text-slate-600 bg-white">
+                Technical Architect & Product Strategist
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight max-w-4xl mb-6">
                 Architecting mission-critical cloud platforms and secure AI operations at Fortune 50 scale.
             </h1>
-            
-            <div class="mt-16 flex items-center space-x-8">
-                <a href="#focus" class="text-sm font-medium border-b border-black pb-1 hover:border-transparent">Explore Strategy</a>
-                <a href="https://github.com/lakshmimamidala" target="_blank" class="text-sm font-medium text-executive-600 hover:text-black">GitHub Profile &rarr;</a>
+            <p class="text-xl text-slate-600 max-w-3xl font-light leading-relaxed">
+                Bridging the gap between autonomous cloud infrastructure and stringent federal compliance mandates. Delivering algorithmic cost governance and zero-downtime reliability for the world's most complex enterprise environments.
+            </p>
+        </div>
+    </section>
+
+    <!-- EB-1A Criterion: Original Contributions of Major Significance -->
+    <section id="contributions" class="py-24 content-wrapper">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-2 text-slate-900">Original Contributions of Major Significance</h2>
+            <p class="text-slate-600 mb-12 max-w-2xl text-lg">Pioneering architectural frameworks deployed across high-availability enterprise environments.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="grid-card p-8 rounded-xl border-t-4 border-t-slate-900">
+                    <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Architecture</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Cloud Reliability & AIOps</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                        Designed self-healing infrastructures and deployed advanced AIOps models to achieve autonomous incident response, eliminating single points of failure in mission-critical networks.
+                    </p>
+                    <ul class="text-sm text-slate-500 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div> Autonomous Operations</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div> Log Anomaly Analysis</li>
+                    </ul>
+                </div>
+                
+                <!-- Pillar 2 -->
+                <div class="grid-card p-8 rounded-xl border-t-4 border-t-slate-600">
+                    <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Strategy</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Cloud Economics & FinOps</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                        Implemented algorithmic cost governance and structural FinOps frameworks, optimizing resource allocation and computational efficiency without compromising enterprise performance.
+                    </p>
+                    <ul class="text-sm text-slate-500 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-600"></div> Algorithmic Governance</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-600"></div> Data Lakehouse Optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- Pillar 3 -->
+                <div class="grid-card p-8 rounded-xl border-t-4 border-t-slate-400">
+                    <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Security</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Secure AI Governance</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                        Architected continuous compliance environments aligned with rigorous defense standards. Developed containment frameworks for the secure deployment of autonomous AI agents.
+                    </p>
+                    <ul class="text-sm text-slate-500 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div> NIST 800-53 & CMMC</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div> AI Agent Containment</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Strategic Focus Section -->
-    <section id="focus" class="py-24 section-divider">
-        <div class="max-w-5xl mx-auto px-8">
-            <h2 class="text-xl font-medium mb-16 text-executive-900">Strategic Focus</h2>
-
-            <div class="grid md:grid-cols-3 gap-12">
-                <!-- Clean, text-focused columns instead of heavy cards -->
+    <!-- EB-1A Criterion: Judging the Work of Others / Evaluation -->
+    <section id="evaluation" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-executive-900 mb-4">Cloud Reliability & AIOps</h3>
-                    <p class="text-executive-600 leading-relaxed text-sm">Designing self-healing infrastructures and deploying autonomous incident response models for high-availability Fortune 50 environments.</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-executive-900 mb-4">Cloud Economics & FinOps</h3>
-                    <p class="text-executive-600 leading-relaxed text-sm">Implementing algorithmic cost governance and strategic FinOps frameworks to optimize resource efficiency without compromising operational performance.</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-executive-900 mb-4">Secure AI Governance</h3>
-                    <p class="text-executive-600 leading-relaxed text-sm">Architecting audit-ready environments aligned with federal standards (NIST 800-53, CMMC) and establishing containment frameworks for autonomous agents.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Authorship & Evaluation Section -->
-    <section id="authorship" class="py-24 section-divider">
-        <div class="max-w-5xl mx-auto px-8">
-            <h2 class="text-xl font-medium mb-16 text-executive-900">Authorship & Evaluation</h2>
-
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-lg font-medium text-executive-900 mb-3">Scholarly Review</h3>
-                    <p class="text-executive-600 text-sm leading-relaxed max-w-md">Peer reviewer for international engineering societies and computer science journals, evaluating submitted research manuscripts in distributed network optimization and systems security.</p>
+                    <h2 class="text-3xl font-bold mb-4">Industry Evaluation & Peer Review</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                        Recognized as an authority in the field, I am routinely sought out by premier global institutions to judge and evaluate the work of emerging innovators, startups, and academic researchers.
+                    </p>
+                    <a href="mailto:your-email@example.com" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 font-bold rounded hover:bg-slate-200 transition-colors">
+                        Request Advisory or Review
+                    </a>
                 </div>
 
-                <div>
-                    <h3 class="text-lg font-medium text-executive-900 mb-3">Technical Evaluation</h3>
-                    <p class="text-executive-600 text-sm leading-relaxed max-w-md">Technical evaluator judging architecture, security containment, and production feasibility for emerging AI initiatives and global venture competitions.</p>
+                <div class="space-y-6">
+                    <div class="p-6 border border-slate-700 rounded-lg bg-slate-800/50">
+                        <div class="text-brand-500 font-bold uppercase tracking-wide text-xs text-slate-400 mb-2">Technical Judge & Evaluator</div>
+                        <h4 class="text-xl font-bold mb-2">Venture Capital & AI Safety Initiatives</h4>
+                        <p class="text-slate-300 text-sm">Assessing the technical viability, architectural security, and scalability of emerging AI startups for global hackathons and elite research sprints.</p>
+                    </div>
+
+                    <div class="p-6 border border-slate-700 rounded-lg bg-slate-800/50">
+                        <div class="text-brand-500 font-bold uppercase tracking-wide text-xs text-slate-400 mb-2">Scholarly Peer Reviewer</div>
+                        <h4 class="text-xl font-bold mb-2">International Engineering Societies</h4>
+                        <p class="text-slate-300 text-sm">Trusted manuscript reviewer for top-tier computer science journals, evaluating cutting-edge research in distributed networks and systems architecture.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 section-divider text-executive-600 text-xs">
-        <div class="max-w-5xl mx-auto px-8 flex justify-between">
-            <p>&copy; 2026 Lakshmi Mamidala.</p>
-            <a href="mailto:your-email@example.com" class="hover:text-black">Contact</a>
+    <footer class="py-8 bg-white border-t border-slate-200 text-center text-slate-500 text-sm font-medium">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Lakshmi Mamidala. Independent Architecture & Strategy.</p>
+            <div class="flex gap-6">
+                <a href="https://github.com/lakshmimamidala" class="hover:text-slate-900">GitHub Profile</a>
+                <a href="mailto:your-email@example.com" class="hover:text-slate-900">Contact</a>
+            </div>
         </div>
     </footer>
 
