@@ -26,15 +26,16 @@
         .container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
         .text-center { text-align: center; }
         
-        /* Aurora Background */
+        /* Ambient Monochrome Background */
         .aurora-bg {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: 0; pointer-events: none; overflow: hidden; background: #050505;
         }
         .orb { position: absolute; filter: blur(80px); border-radius: 50%; }
-        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 60%); }
-        .orb-2 { top: 20%; right: -20%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(129, 140, 248, 0.10) 0%, transparent 60%); }
-        .orb-3 { bottom: -20%; left: 20%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(232, 121, 249, 0.08) 0%, transparent 60%); }
+        /* Changed to soft silver/white glows */
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%); }
+        .orb-2 { top: 20%; right: -20%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 60%); }
+        .orb-3 { bottom: -20%; left: 20%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 60%); }
 
         .content-layer { position: relative; z-index: 10; }
 
@@ -57,9 +58,10 @@
         .hero-title { font-size: 4rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 3rem; color: #ffffff; }
         .hero-desc { font-size: 1.25rem; font-weight: 300; color: #d4d4d8; max-width: 48rem; margin: 0 auto; line-height: 1.7; }
         
+        /* Metallic Text Gradient */
         .text-gradient {
             background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #38bdf8, #818cf8, #e879f9);
+            background-image: linear-gradient(to right, #ffffff, #a1a1aa);
         }
 
         /* 4-Pillar Summary Grid */
@@ -69,7 +71,7 @@
             text-align: left; 
         }
         .sum-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #d4d4d8; margin-bottom: 1rem; display: flex; align-items: center; }
-        .sum-line { width: 1rem; height: 1px; background: #38bdf8; margin-right: 0.75rem; }
+        .sum-line { width: 1rem; height: 1px; background: #ffffff; margin-right: 0.75rem; }
         .sum-desc { font-size: 0.875rem; color: #a1a1aa; line-height: 1.6; }
 
         /* Bento Grid */
@@ -83,16 +85,13 @@
             background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
         }
+        
+        /* Monochrome Icon Boxes */
         .icon-box {
             width: 3.5rem; height: 3.5rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center;
-            margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.03); color: #ffffff;
         }
         .icon-box svg { width: 1.5rem; height: 1.5rem; }
-        
-        .c-cyan { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.2); color: #22d3ee; }
-        .c-violet { background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2); color: #a78bfa; }
-        .c-emerald { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: #34d399; }
-        .c-rose { background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.2); color: #fb7185; }
 
         .card-title { font-size: 1.875rem; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 1rem; }
         .card-desc { color: #a1a1aa; font-size: 1.125rem; font-weight: 300; line-height: 1.6; margin-top: 1.5rem; }
@@ -100,7 +99,7 @@
         /* Impact Section */
         .impact-wrap { position: relative; margin-top: 3rem; }
         .impact-bg {
-            background: linear-gradient(to bottom, transparent, #080f1c 20%, #060b14 100%);
+            background: linear-gradient(to bottom, transparent, #0a0a0a 20%, #050505 100%);
             padding: 8rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative;
         }
         .impact-grid-pattern {
@@ -112,15 +111,15 @@
             background: rgba(0, 0, 0, 0.4); padding: 3.5rem; border-radius: 2rem;
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .impact-subtitle { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; }
-        .impact-line { width: 1.5rem; height: 1px; margin-right: 0.75rem; }
+        .impact-subtitle { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; color: #ffffff; }
+        .impact-line { width: 1.5rem; height: 1px; margin-right: 0.75rem; background: #ffffff; }
         .impact-title { font-size: 2.25rem; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 1.5rem; }
         .impact-desc { color: #d4d4d8; font-size: 1.125rem; font-weight: 300; line-height: 1.6; }
 
         /* Footer */
-        .footer { padding: 3rem 0; background: #060b14; border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 10; text-align: center; }
-        .footer a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.3s; }
-        .footer a:hover { color: #22d3ee; }
+        .footer { padding: 3rem 0; background: #050505; border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 10; text-align: center; }
+        .footer a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.3s; color: #a1a1aa; }
+        .footer a:hover { color: #ffffff; }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
@@ -197,7 +196,7 @@
                 
                 <div class="bento-card">
                     <div>
-                        <div class="icon-box c-cyan">
+                        <div class="icon-box">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
                         <h3 class="card-title">Autonomous Resilience</h3>
@@ -209,7 +208,7 @@
                 
                 <div class="bento-card">
                     <div>
-                        <div class="icon-box c-violet">
+                        <div class="icon-box">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         </div>
                         <h3 class="card-title">Zero-Trust Governance</h3>
@@ -221,7 +220,7 @@
 
                 <div class="bento-card">
                     <div>
-                        <div class="icon-box c-emerald">
+                        <div class="icon-box">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                         </div>
                         <h3 class="card-title">Platform Economics</h3>
@@ -233,7 +232,7 @@
 
                 <div class="bento-card">
                     <div>
-                        <div class="icon-box c-rose">
+                        <div class="icon-box">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                         </div>
                         <h3 class="card-title">AI-Accelerated Delivery</h3>
@@ -253,7 +252,7 @@
                 <div class="container grid-2" style="margin: 0 auto; position: relative; z-index: 10;">
                     
                     <div id="leadership" class="impact-card">
-                        <h2 class="impact-subtitle" style="color: #22d3ee;"><span class="impact-line" style="background: #22d3ee;"></span> Scholarly Review</h2>
+                        <h2 class="impact-subtitle"><span class="impact-line"></span> Scholarly Review</h2>
                         <h3 class="impact-title">Thought Leadership.</h3>
                         <p class="impact-desc">
                             Evaluating cutting-edge global research to maintain the structural integrity and security of the broader computer science discipline. Serving as a guardian for enterprise standards across international journals.
@@ -261,7 +260,7 @@
                     </div>
 
                     <div id="advisory" class="impact-card">
-                        <h2 class="impact-subtitle" style="color: #a78bfa;"><span class="impact-line" style="background: #a78bfa;"></span> Industry Impact</h2>
+                        <h2 class="impact-subtitle"><span class="impact-line"></span> Industry Impact</h2>
                         <h3 class="impact-title">Technical Advisory.</h3>
                         <p class="impact-desc">
                             Selected by premier engineering institutions, global venture capital firms, and specialized AI safety institutes to assess architectural viability, scalability, and funding potential for emerging technologies.
