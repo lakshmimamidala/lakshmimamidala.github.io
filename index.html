@@ -34,31 +34,40 @@
         .content-wrapper { background-color: rgba(248, 250, 252, 0.95); }
         .evidence-card {
             background: #ffffff;
-            border-left: 4px solid #0f172a;
+            border-top: 1px solid #e2e8f0;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 4px solid #0f172a;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
         }
+        .evidence-card:hover {
+            transform: translateY(-2px);
+        }
+        .logo-text { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; }
     </style>
 </head>
 <body class="antialiased selection:bg-slate-900 selection:text-white">
 
     <!-- Minimal Header -->
-    <nav class="fixed w-full z-50 top-0 bg-white/90 backdrop-blur border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="text-lg font-bold tracking-tight text-slate-900 uppercase">Lakshmi Mamidala</div>
             <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
                 <a href="#strategy" class="hover:text-slate-900 transition-colors">Strategic Focus</a>
-                <a href="#impact" class="hover:text-slate-900 transition-colors">Ecosystem Impact</a>
+                <a href="#leadership" class="hover:text-slate-900 transition-colors">Thought Leadership</a>
+                <a href="#impact" class="hover:text-slate-900 transition-colors">Industry Advisory</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero: The Executive Statement -->
-    <section class="pt-32 pb-16 md:pt-48 md:pb-24 content-wrapper border-b border-slate-200">
+    <section class="pt-32 pb-16 md:pt-40 content-wrapper">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="inline-block px-3 py-1 mb-6 border border-slate-300 rounded-sm text-xs font-bold uppercase tracking-widest text-slate-600 bg-white">
+            <div class="inline-block px-3 py-1 mb-8 border border-slate-300 rounded-sm text-xs font-bold uppercase tracking-widest text-slate-600 bg-white">
                 Technical Architect & Product Strategist
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight max-w-4xl mb-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1] max-w-5xl mb-8">
                 Directing Enterprise AI strategy and mission-critical cloud architecture at massive scale.
             </h1>
             <p class="text-xl text-slate-600 max-w-3xl font-light leading-relaxed">
@@ -67,22 +76,36 @@
         </div>
     </section>
 
-    <!-- Architectural Strategy (Bullet-driven, high impact) -->
+    <!-- Social Proof / Advisory Footprint (Crucial for Top 1%) -->
+    <section class="py-8 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 text-center md:text-left">Trusted Evaluator & Advisor For</p>
+            <div class="flex flex-wrap justify-center md:justify-start items-center gap-10 md:gap-16 opacity-70 grayscale">
+                <span class="text-2xl font-bold logo-text text-slate-800">IEEE</span>
+                <span class="text-xl font-bold logo-text text-slate-800 tracking-tight">AntlerVC</span>
+                <span class="text-xl font-bold logo-text text-slate-800">Apart Research</span>
+                <span class="text-lg font-bold logo-text text-slate-800">Journal of Computer Science</span>
+                <span class="text-xl font-bold logo-text text-slate-800">SF Startup Labs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architectural Strategy -->
     <section id="strategy" class="py-24 content-wrapper">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-slate-900">Strategic Product Initiatives</h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="evidence-card p-8 rounded-r-xl border-l-slate-900">
+                <div class="evidence-card p-8 bg-white">
                     <h3 class="text-lg font-bold text-slate-900 mb-4">Enterprise AI Governance</h3>
                     <ul class="text-sm text-slate-600 space-y-3 font-medium">
-                        <li>• Deploying AI models at scale within highly regulated environments.</li>
+                        <li>• Deploying AI models at scale within highly regulated defense environments.</li>
                         <li>• Designing architecture targeting NIST 800-53 and CMMC certification.</li>
                         <li>• Establishing strict AI agent containment and autonomous response frameworks.</li>
                     </ul>
                 </div>
                 
-                <div class="evidence-card p-8 rounded-r-xl border-l-slate-600">
+                <div class="evidence-card p-8 bg-white" style="border-bottom-color: #475569;">
                     <h3 class="text-lg font-bold text-slate-900 mb-4">AIOps & Platform Reliability</h3>
                     <ul class="text-sm text-slate-600 space-y-3 font-medium">
                         <li>• Driving deep learning framework integration for Log Anomaly Analysis.</li>
@@ -91,7 +114,7 @@
                     </ul>
                 </div>
                 
-                <div class="evidence-card p-8 rounded-r-xl border-l-slate-400">
+                <div class="evidence-card p-8 bg-white" style="border-bottom-color: #94a3b8;">
                     <h3 class="text-lg font-bold text-slate-900 mb-4">Algorithmic FinOps</h3>
                     <ul class="text-sm text-slate-600 space-y-3 font-medium">
                         <li>• Integrating aggressive cloud financial optimization directly into product roadmaps.</li>
@@ -103,43 +126,49 @@
         </div>
     </section>
 
-    <!-- Industry Impact & Judging (Concrete Evidence) -->
+    <!-- Thought Leadership & Authorship (New Section for EB-1A) -->
+    <section id="leadership" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 max-w-3xl">
+                <h2 class="text-3xl font-bold mb-4 text-slate-900">Authorship & Ecosystem Mentorship</h2>
+                <p class="text-slate-600 text-lg leading-relaxed">Actively shaping the future of computing architecture by reviewing academic research and mentoring the next generation of STEM leadership.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="border-l-2 border-slate-200 pl-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Scholarly Review</span>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Academic Peer Reviewer</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Trusted manuscript reviewer for the IEEE and the Journal of Computer Science, evaluating cutting-edge global research on network optimization, distributed efficiency, and secure systems.</p>
+                </div>
+
+                <div class="border-l-2 border-slate-200 pl-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Industry Mentorship</span>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">GESTEM Technical Mentor</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Providing high-level guidance and mentorship for GESTEM, guiding and inspiring future female technical leaders in systems architecture and engineering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Impact & Judging -->
     <section id="impact" class="py-24 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold mb-4">Industry Evaluation & Leadership</h2>
-                <p class="text-slate-400 text-lg max-w-2xl">Routinely selected by premier institutions to evaluate cutting-edge research, secure infrastructure, and venture viability.</p>
+            <div class="mb-16 max-w-3xl">
+                <h2 class="text-3xl font-bold mb-4">Venture Advisory & Technical Judging</h2>
+                <p class="text-slate-400 text-lg leading-relaxed">Routinely selected by premier institutions to evaluate cutting-edge research, secure infrastructure, and venture viability.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Evaluation Pillar -->
-                <div class="space-y-6">
-                    <div class="p-6 bg-slate-800 rounded-lg">
-                        <div class="text-slate-400 font-bold uppercase tracking-wide text-xs mb-3">Scholarly Peer Review</div>
-                        <h4 class="text-lg font-bold mb-2">IEEE & Journal of Computer Science</h4>
-                        <p class="text-slate-300 text-sm">Active manuscript reviewer evaluating research on network optimization, distributed efficiency, and secure systems architecture.</p>
-                    </div>
-
-                    <div class="p-6 bg-slate-800 rounded-lg">
-                        <div class="text-slate-400 font-bold uppercase tracking-wide text-xs mb-3">Venture & Startup Assessment</div>
-                        <h4 class="text-lg font-bold mb-2">AntlerVC & SF Startup Labs</h4>
-                        <p class="text-slate-300 text-sm">Serving as a technical judge for global hackathons and providing deep-dive technical architecture feedback for early-stage Enterprise AI and FinTech startups.</p>
-                    </div>
+                <div class="p-8 bg-slate-800 rounded-lg border border-slate-700 hover:border-slate-500 transition-colors">
+                    <div class="text-slate-400 font-bold uppercase tracking-wide text-xs mb-3">Venture & Startup Assessment</div>
+                    <h4 class="text-xl font-bold mb-3">AntlerVC & SF Startup Labs</h4>
+                    <p class="text-slate-300 text-sm leading-relaxed">Serving as a technical judge for global hackathons and providing deep-dive technical architecture feedback for early-stage Enterprise AI and FinTech startups navigating funding rounds.</p>
                 </div>
 
-                <!-- Academic/Event Pillar -->
-                <div class="space-y-6">
-                    <div class="p-6 bg-slate-800 rounded-lg">
-                        <div class="text-slate-400 font-bold uppercase tracking-wide text-xs mb-3">AI Safety & Research</div>
-                        <h4 class="text-lg font-bold mb-2">Apart Research: AI Incident Response</h4>
-                        <p class="text-slate-300 text-sm">Expert technical judge for elite research sprints, evaluating complex projects focused on AI agent containment and autonomous response mechanisms.</p>
-                    </div>
-                    
-                    <div class="p-6 bg-slate-800 rounded-lg">
-                        <div class="text-slate-400 font-bold uppercase tracking-wide text-xs mb-3">Conference Management</div>
-                        <h4 class="text-lg font-bold mb-2">Data Science & AI Operations</h4>
-                        <p class="text-slate-300 text-sm">Utilizing toolkit frameworks (Microsoft CMT) to oversee submissions, verify accounts, and manage technical workflows for international data science conferences.</p>
-                    </div>
+                <div class="p-8 bg-slate-800 rounded-lg border border-slate-700 hover:border-slate-500 transition-colors">
+                    <div class="text-slate-400 font-bold uppercase tracking-wide text-xs mb-3">AI Safety & Research</div>
+                    <h4 class="text-xl font-bold mb-3">Apart Research & Global Conferences</h4>
+                    <p class="text-slate-300 text-sm leading-relaxed">Expert technical judge for elite AI Incident Response sprints, evaluating autonomous response mechanisms. Additionally utilizing tools like Microsoft CMT to oversee technical workflows for international data science conferences.</p>
                 </div>
             </div>
         </div>
