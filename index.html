@@ -82,13 +82,13 @@
         @media (min-width: 768px) {
             .ethos-card { flex-direction: row; gap: 4rem; align-items: flex-start; }
         }
-        .portrait-placeholder {
+        
+        .portrait-img {
             width: 180px; height: 180px; border-radius: 50%; flex-shrink: 0;
-            background: linear-gradient(135deg, #1E293B, #0F172A); border: 1px solid rgba(255,255,255,0.1);
-            display: flex; justify-content: center; align-items: center; text-align: center;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            object-fit: cover; object-position: center top;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.5);
         }
-        .portrait-placeholder span { color: #64748B; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5; font-weight: 600; }
         
         .ethos-quote { font-size: 1.75rem; font-weight: 500; letter-spacing: -0.02em; color: #F8FAFC; line-height: 1.4; margin-bottom: 1.5rem; font-style: italic; }
         .ethos-desc { color: #94A3B8; font-size: 1.125rem; font-weight: 300; line-height: 1.7; }
@@ -106,7 +106,6 @@
             transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
         }
         
-        /* Soft Icon Boxes */
         .icon-box {
             width: 3.5rem; height: 3.5rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center;
             margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03);
@@ -178,7 +177,7 @@
                 <div class="nav-divider"></div>
                 <div class="nav-links">
                     <a href="#strategy" class="nav-link">Strategy</a>
-                    <a href="#leadership" class="nav-link">Authorship</a>
+                    <a href="#leadership" class="nav-link">Thought Leadership</a>
                     <a href="#advisory" class="nav-link">Advisory</a>
                 </div>
             </nav>
@@ -195,7 +194,7 @@
                 </p>
             </div>
             
-            <!-- Restored Executive Summary -->
+            <!-- Executive Summary -->
             <div class="summary-grid">
                 <div>
                     <h3 class="sum-title"><span class="sum-line"></span> Product Strategy</h3>
@@ -216,19 +215,16 @@
             </div>
         </section>
 
-        <!-- NEW: Personal Ethos Section -->
+        <!-- Personal Ethos Section -->
         <section class="container">
             <div class="ethos-card">
-                <!-- Replace this div with an actual <img> tag later -->
-                <div class="portrait-placeholder">
-                    <span>Professional<br>Portrait</span>
-                </div>
+                <img src="Lakshmi Mamidala.jpeg" alt="Lakshmi Mamidala" class="portrait-img">
                 
                 <div>
                     <h2 class="sum-title" style="color: #38bdf8;"><span class="sum-line" style="background: #38bdf8;"></span> The Human Element</h2>
                     <h3 class="ethos-quote">"Enterprise AI at massive scale requires more than just compute power—it demands human guardianship."</h3>
                     <p class="ethos-desc">
-                        Beyond the technical architecture, my true focus is on the intersection of autonomous execution and human intent. As artificial intelligence fundamentally reshapes the Fortune 50 landscape, my mission is to ensure these frontier systems remain grounded, ethically governed, and unconditionally aligned with the humans they serve.
+                        Beyond the technical architecture, my true focus is driving the product vision at the intersection of autonomous execution and human intent. As artificial intelligence fundamentally reshapes the Fortune 50 landscape, my mission is to ensure these frontier systems remain grounded, ethically governed, and unconditionally aligned with the humans they serve.
                     </p>
                     <div class="ethos-sig">— Lakshmi Mamidala</div>
                 </div>
@@ -299,7 +295,7 @@
                     
                     <div id="leadership" class="impact-card">
                         <h2 class="impact-subtitle"><span class="impact-line" style="background: #38bdf8;"></span> Scholarly Review</h2>
-                        <h3 class="impact-title">Thought Leadership.</h3>
+                        <h3 class="impact-title">Authorship.</h3>
                         <p class="impact-desc">
                             Evaluating cutting-edge global research to maintain the structural integrity and security of the broader computer science discipline. Serving as a guardian for enterprise standards across international journals.
                         </p>
