@@ -1,153 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lakshmi Mamidala | Independent Architect & Strategist</title>
-    <meta name="description" content="Lakshmi Mamidala is a Technical Architect & Product Strategist specializing in Enterprise Cloud Reliability, FinOps, Secure AI Governance, and Audit-Ready Platform Architecture.">
+    <title>Lakshmi Mamidala | Distinguished Technical Architect</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --primary: #0a192f;
-            --secondary: #64ffda;
-            --text-main: #ccd6f6;
-            --text-muted: #8892b0;
-            --bg-dark: #020c1b;
-            --bg-card: #112240;
+    <!-- Tailwind CSS for Modern Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            500: '#14b8a6', // Elegant Teal
+                            900: '#134e4a',
+                        },
+                        dark: '#0f172a' // Slate 900
+                    }
+                }
+            }
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; background-color: var(--primary); color: var(--text-main); }
-        
-        body { line-height: 1.6; }
-        a { color: var(--secondary); text-decoration: none; transition: 0.3s; }
-        a:hover { text-decoration: underline; }
-        
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; padding: 2rem 10%; background: rgba(10, 25, 47, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .logo { font-size: 1.2rem; font-weight: 700; color: var(--secondary); letter-spacing: 1px; }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { color: var(--text-main); font-weight: 600; }
-        .nav-links a:hover { color: var(--secondary); text-decoration: none; }
+    </script>
 
-        /* Sections */
-        section { padding: 100px 10%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        
-        /* Hero */
-        .hero h1 { font-size: 4rem; color: #e6f1ff; margin-bottom: 1rem; line-height: 1.1; }
-        .hero h2 { font-size: 2.5rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-        .hero p { max-width: 600px; font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
-        .btn { padding: 1rem 2rem; border: 1px solid var(--secondary); border-radius: 4px; color: var(--secondary); font-weight: 600; background: transparent; cursor: pointer; transition: 0.3s; }
-        .btn:hover { background: rgba(100, 255, 218, 0.1); text-decoration: none; }
-
-        /* Pillars & Grid */
-        <section id="pillars">
-        <h2 class="section-title">Core Architectural & Strategic Pillars</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Cloud Reliability & AIOps Strategy</h3>
-                <p>Pioneering self-healing infrastructures and driving the product vision for advanced AIOps. Focused on achieving autonomous, zero-downtime operations for mission-critical, enterprise-scale platforms.</p>
-            </div>
-            <div class="card">
-                <h3>Cloud Economics & FinOps Vision</h3>
-                <p>Designing algorithmic cost governance and strategic FinOps models. Aligning complex cloud architectures with overarching product strategy to optimize resource efficiency without compromising performance.</p>
-            </div>
-            <div class="card">
-                <h3>Secure AI Governance & Compliance</h3>
-                <p>Architecting audit-ready environments tailored to rigorous defense and federal standards (NIST, CMMC). Developing forward-looking AI agent containment frameworks for secure, scalable enterprise AI adoption.</p>
-            </div>
-        </div>
-    </section>
-
-        /* Footer */
-        footer { padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; background: var(--bg-dark); }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero h2 { font-size: 1.8rem; }
-            .nav-links { display: none; } 
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(20, 184, 166, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #14b8a6 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
-
-    <!-- Structured Data for SEO / Knowledge Panel -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Lakshmi Mamidala",
-      "jobTitle": "Independent Architect & Strategist",
-      "description": "Technical Architect & Product Strategist specializing in Enterprise Cloud Reliability, FinOps, Secure AI Governance, and Audit-Ready Platform Architecture.",
-      "url": "https://lakshmimamidala.github.io",
-      "sameAs": [
-        "https://www.linkedin.com/in/YOUR-LINKEDIN",
-        "https://github.com/lakshmimamidala"
-      ],
-      "knowsAbout": ["Enterprise Cloud Reliability", "FinOps", "Secure AI Governance", "Platform Architecture", "AIOps", "NIST 800-53"]
-    }
-    </script>
 </head>
-<body>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
 
-    <nav>
-        <div class="logo">LM.</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#pillars">Core Pillars</a>
-            <a href="#leadership">Industry Leadership</a>
-            <a href="https://github.com/lakshmimamidala" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter text-white">LM<span class="text-brand-500">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-white transition-colors">Vision</a>
+                <a href="#pillars" class="hover:text-white transition-colors">Architecture</a>
+                <a href="#leadership" class="hover:text-white transition-colors">Leadership</a>
+                <a href="https://github.com/lakshmimamidala" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+            </div>
         </div>
     </nav>
 
-    <section id="about" class="hero">
-        <p>Hi, my name is</p>
-        <h1>Lakshmi Mamidala.</h1>
-        <h2>I architect audit-ready cloud platforms.</h2>
-        <p>I am an Independent Technical Architect and Product Strategist specializing in Enterprise Cloud Reliability, FinOps, and Secure AI Governance. I bridge the gap between autonomous operations and stringent compliance mandates to build scalable, resilient infrastructure.</p>
-        <a href="mailto:your-email@example.com" class="btn" style="width: max-content;">Get in Touch</a>
-    </section>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-brand-900/20 blur-[120px]"></div>
+            <div class="absolute top-[60%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-900/20 blur-[100px]"></div>
+        </div>
 
-    <section id="pillars">
-        <h2 class="section-title">Core Architectural Pillars</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Platform Reliability & Autonomous Ops</h3>
-                <p>Designing self-healing infrastructures and leveraging AIOps for autonomous incident response. Focused on minimizing downtime and accelerating recovery in mission-critical enterprise environments.</p>
-            </div>
-            <div class="card">
-                <h3>Cloud Economics & FinOps</h3>
-                <p>Implementing algorithmic cost governance and optimization strategies. Ensuring cloud infrastructure scales efficiently without compromising performance, aligning technical deployments with strategic financial objectives.</p>
-            </div>
-            <div class="card">
-                <h3>Continuous Compliance & AI Governance</h3>
-                <p>Architecting environments that inherently meet NIST 800-53 and CMMC frameworks. Pioneering AI agent containment frameworks to ensure safe, auditable, and secure AI deployments at scale.</p>
+        <div class="max-w-7xl mx-auto px-6 w-full" data-aos="fade-up" data-aos-duration="1000">
+            <p class="text-brand-500 font-semibold tracking-wide uppercase text-sm mb-4">Distinguished Technical Architect</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Lakshmi Mamidala
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-slate-400 font-light mb-8 max-w-3xl leading-relaxed">
+                I drive product vision and architect mission-critical, <span class="text-white font-medium">audit-ready cloud platforms.</span>
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#pillars" class="inline-flex justify-center items-center px-8 py-4 bg-brand-500 text-white rounded-lg font-semibold hover:bg-brand-400 transition-colors">
+                    Explore Architecture
+                </a>
+                <a href="mailto:your-email@example.com" class="inline-flex justify-center items-center px-8 py-4 bg-transparent border border-slate-600 text-white rounded-lg font-semibold hover:border-brand-500 transition-colors">
+                    Contact Me
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="leadership">
-        <h2 class="section-title">Industry Leadership & Contributions</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Peer Reviewer & Academic Contributor</h3>
-                <p>Active peer reviewer for the IEEE, Journal of Computer Science, and OpenReview, evaluating cutting-edge research in computer science, network optimization, and secure systems architecture.</p>
+    <!-- Core Pillars Section -->
+    <section id="pillars" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Core Strategic Pillars</h2>
+                <div class="w-20 h-1 bg-brand-500 rounded"></div>
             </div>
-            <div class="card">
-                <h3>Technical Judge & Evaluator</h3>
-                <p>Expert technical judge for the Apart Research AI Incident Response Sprint and AntlerVC hackathons, assessing the viability, security, and scalability of emerging AI solutions and startup infrastructures.</p>
-            </div>
-            <div class="card">
-                <h3>Speaker & Mentor</h3>
-                <p>Dedicated to advancing the technical community through mentorship and speaking engagements, focusing on the intersection of cloud architecture, security, and the future of AI governance.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-brand-900/50 rounded-xl flex items-center justify-center mb-6 text-brand-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cloud Reliability & AIOps Strategy</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Pioneering self-healing infrastructures and driving product vision for advanced AIOps to achieve autonomous, zero-downtime operations for enterprise-scale platforms.</p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-brand-900/50 rounded-xl flex items-center justify-center mb-6 text-brand-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cloud Economics & FinOps Vision</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Designing algorithmic cost governance and strategic FinOps models, optimizing resource efficiency in complex architectures without compromising performance.</p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-brand-900/50 rounded-xl flex items-center justify-center mb-6 text-brand-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Secure AI Governance & Compliance</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Architecting audit-ready environments tailored to rigorous federal standards (NIST, CMMC) and developing AI agent containment frameworks for secure enterprise adoption.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>Designed & Built by Lakshmi Mamidala &copy; 2026</p>
+    <!-- Leadership Section -->
+    <section id="leadership" class="py-20 bg-slate-800/30 border-y border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Industry Leadership</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Sustained acclaim and recognition from premier global institutions.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Record 1 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start md:items-center" data-aos="fade-up">
+                    <div class="md:w-1/4 text-brand-500 font-bold uppercase tracking-wide text-sm">Technical Judge</div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-lg font-semibold text-white mb-2">Premier Venture Capital & AI Safety Institutes</h4>
+                        <p class="text-slate-400 text-sm">Selected to evaluate high-stakes technical architectures for global hackathons, driving the future of AI governance and startup viability.</p>
+                    </div>
+                </div>
+
+                <!-- Record 2 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start md:items-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="md:w-1/4 text-brand-500 font-bold uppercase tracking-wide text-sm">Peer Reviewer</div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-lg font-semibold text-white mb-2">International Engineering Societies</h4>
+                        <p class="text-slate-400 text-sm">Trusted manuscript reviewer for top-tier computer science journals, influencing the publication of cutting-edge research in secure systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-bold text-white mb-6">Ready to collaborate?</h2>
+            <a href="mailto:your-email@example.com" class="text-brand-500 hover:text-white transition-colors text-lg font-medium">Get in touch →</a>
+            <p class="text-slate-600 text-sm mt-12">&copy; 2026 Lakshmi Mamidala. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Initialize Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+    </script>
 </body>
 </html>
